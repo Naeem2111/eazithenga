@@ -76,6 +76,11 @@ body {
   cursor: pointer;
   border-radius: 30px;
   padding: 8px 15px;
+  transition: all 0.3s ease;
+}
+.nav-li li:hover {
+  background-color: #ff914d;
+  transition: all 0.3s ease;
 }
 .active {
   background-color: #ff914d;

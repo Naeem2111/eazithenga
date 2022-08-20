@@ -27,11 +27,11 @@ const Contact = () => {
           </div>
           <div className="arow">
             <h3>Email Address</h3>
-            <h4>hello@reallygreatsite.com</h4>
+            <h4>info@eazithenga.com</h4>
           </div>
           <div className="arow">
             <h3>Phone Number</h3>
-            <h4>(123) 456 7890</h4>
+            <h4>+27 60 074 871</h4>
           </div>
         </div>
       </div>
