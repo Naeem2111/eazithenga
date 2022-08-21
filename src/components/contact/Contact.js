@@ -8,7 +8,7 @@ const Contact = () => {
           <ul>
             <li>
               <img src={Connect} alt="" />
-              <a href="https://wa.me/+2760074871">Whatsapp</a>
+              <a href="https://wa.me/+27600748715">Whatsapp</a>
             </li>
             {/* <li>
               <a href="#">Instagram</a>
@@ -33,8 +33,8 @@ const Contact = () => {
           </div>
           <div className="arow">
             <h3>Phone Number</h3>
-            <a href="https://wa.me/+2760074871">
-              <h4>+27 60 074 871</h4>
+            <a href="https://wa.me/+27600748715">
+              <h4>+27 60 074 8715</h4>
             </a>
           </div>
         </div>
