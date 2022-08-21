@@ -9,7 +9,7 @@ const Plan = () => {
         <h4>Our Pricing Plan For You</h4>
         <div className="planbtn">
           <button className="btn1">MONTHLY</button>
-          <button className="btn2">YEARLY</button>
+          {/* <button className="btn2">YEARLY</button> */}
         </div>
         <div className="plan-block">
           <div className="p-block pt2">
