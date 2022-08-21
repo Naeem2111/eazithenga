@@ -14,7 +14,7 @@ const Home = () => {
             Simplify the way you <br /> receive & manage orders, <br /> engage
             with customers, <br /> facilitate payments & <br /> much more
           </p>
-          <button>LEARN MORE</button>
+          {/* <button>LEARN MORE</button> */}
         </div>
         <div className="column-right">
           <img src={HomeIcon} alt="" />
