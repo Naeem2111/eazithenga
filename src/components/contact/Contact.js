@@ -8,30 +8,34 @@ const Contact = () => {
           <ul>
             <li>
               <img src={Connect} alt="" />
-              <a href="#">Twitter</a>
+              <a href="https://wa.me/+2760074871">Whatsapp</a>
             </li>
-            <li>
+            {/* <li>
               <a href="#">Instagram</a>
             </li>
             <li>
               <a href="#">Facebook</a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="address">
           <div className="arow">
             <h3>Mailing Address</h3>
             <h4>
-              123 Anywhere St., Any City <br /> State, Country 12345
+              331 Albert Rd, <br /> Woodstock, Cape Town, 7915
             </h4>
           </div>
           <div className="arow">
             <h3>Email Address</h3>
-            <h4>info@eazithenga.com</h4>
+            <a href="mailto:info@eazithenga.com">
+              <h4>info@eazithenga.com</h4>
+            </a>
           </div>
           <div className="arow">
             <h3>Phone Number</h3>
-            <h4>+27 60 074 871</h4>
+            <a href="https://wa.me/+2760074871">
+              <h4>+27 60 074 871</h4>
+            </a>
           </div>
         </div>
       </div>

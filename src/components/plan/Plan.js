@@ -5,7 +5,7 @@ const Plan = () => {
   return (
     <div className="container">
       <div className="plan">
-        <h2>What We Offer</h2>
+        <h2 className="planHeader">What We Offer</h2>
         <h4>Our Pricing Plan For You</h4>
         <div className="planbtn">
           <button className="btn1">MONTHLY</button>
@@ -36,7 +36,7 @@ const Plan = () => {
               <li> &nbsp; &nbsp;Store Catalog</li>
               <li> &nbsp; &nbsp;Linked with Whatsapp Catalog</li>
               <li> &nbsp; &nbsp;Linked with Facebook Catalog</li>
-              <li> &nbsp; &nbsp;Upload up to 10 products</li>
+              <li> &nbsp; &nbsp;Upload up to 100 products</li>
               <li> &nbsp; &nbsp;Payment Gateway</li>
               <li> &nbsp; &nbsp;Chat Automation</li>
               <li> &nbsp; &nbsp;Order Management</li>
