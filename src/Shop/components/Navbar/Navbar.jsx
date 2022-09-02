@@ -7,17 +7,28 @@ import {
   MenuItem,
   Menu,
   Typography,
+  Drawer,
+  ClickAwayListener,
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
 
 import logo from "../../../assets/images/nellokicks.png";
 import useStyles from "./styles";
 
-const PrimarySearchAppBar = ({ totalItems }) => {
+const PrimarySearchAppBar = ({
+  totalItems,
+  cart,
+  onRemoveFromCart,
+  onUpdateCartQty,
+  onEmptyCart,
+}) => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const classes = useStyles();
-  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const handleDrawerOpen = () => setOpen(true);
+  const handleDrawerClose = () => setOpen(false);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -37,8 +48,7 @@ const PrimarySearchAppBar = ({ totalItems }) => {
     >
       <MenuItem>
         <IconButton
-          component={Link}
-          to="/cart"
+          onClick={handleDrawerOpen}
           aria-label="Show cart items"
           color="inherit"
         >
@@ -57,44 +67,47 @@ const PrimarySearchAppBar = ({ totalItems }) => {
 
   return (
     <>
-      <AppBar position="fixed" className={classes.appBar} color="inherit">
-        <Toolbar>
-          <Typography
-            component={Link}
-            to="/"
-            variant="h6"
-            className={classes.title}
-            color="inherit"
-          >
-            <img
-              src={logo}
-              alt="commerce.js"
-              height="25px"
-              className={classes.image}
-            />{" "}
-            Commerce.js
-          </Typography>
-          <div className={classes.grow} />
-          {location.pathname === "/" && (
-            <div className={classes.button}>
-              <IconButton
-                component={Link}
-                to="/cart"
-                aria-label="Show cart items"
-                color="inherit"
+      <div className={classes.AppBar}>
+        {
+          <div className={classes.button}>
+            <IconButton
+              onClick={handleDrawerOpen}
+              aria-label="Show cart items"
+              color="inherit"
+            >
+              <Badge
+                badgeContent={totalItems}
+                color="secondary"
+                overlap="rectangular"
               >
-                <Badge
-                  badgeContent={totalItems}
-                  color="secondary"
-                  overlap="rectangular"
-                >
-                  <ShoppingCart />
-                </Badge>
-              </IconButton>
-            </div>
-          )}
-        </Toolbar>
-      </AppBar>
+                <ShoppingCart />
+              </Badge>
+            </IconButton>
+          </div>
+        }
+      </div>
+
+      <ClickAwayListener
+        mouseEvent="onMouseDown"
+        touchEvent="onTouchStart"
+        onClickAway={() => open && handleDrawerClose()}
+      >
+        <Drawer
+          variant="persistent"
+          anchor="right"
+          open={open}
+          onClose={(_, reason) =>
+            reason === "backdropClick" && console.log("close")
+          }
+        >
+          <Cart
+            cart={cart}
+            onRemoveFromCart={onRemoveFromCart}
+            onUpdateCartQty={onUpdateCartQty}
+            onEmptyCart={onEmptyCart}
+          />
+        </Drawer>
+      </ClickAwayListener>
       {renderMobileMenu}
     </>
   );
